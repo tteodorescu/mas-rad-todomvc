@@ -33,8 +33,8 @@ Route::get('/test/{id}', function($id)
 
 Route::get('/controller/index', 'TestController@index');
 
-Route::get('/', array('as'=> 'root', 'uses' => function()
-  { return '<h1>hello from root!<h1>';}));
+/*Route::get('/', array('as'=> 'root', 'uses' => function()
+  { return '<h1>hello from root!<h1>';}));*/
            
 /* autres exemples
 Route::get('/controller/index', array(
