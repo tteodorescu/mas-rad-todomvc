@@ -1,11 +1,11 @@
-
-<!--@section('title', 'New test')-->
-<!--@section('content')-->
+@extends('layouts.master')
+<!--@section('title', 'New task')-->
+@section('content')
 
 <!--if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
-{{Form::model('test', array('action'  => 'TaskController@store')) }}
+{{Form::model('task', array('action'  => 'TaskController@store')) }}
 
 <div class="form-group">
   {{ Form::label('name', 'Name') }}
@@ -16,4 +16,4 @@
 
 {{ Form::close() }}
 
-<!--@stop-->
+@stop

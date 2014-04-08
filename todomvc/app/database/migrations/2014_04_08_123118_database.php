@@ -12,15 +12,7 @@ class Database extends Migration {
 	 */
 	public function up()
 	{
-    Schema::create('users', function($table)
-    {
-      $table->increments('id');
-      $table->string('email')->unique();
-      $table->string('username');
-      $table->string('name');
-      $table->string('password');
-      $table->timestamps();
-    });
+		//
 	}
 
 	/**
@@ -30,7 +22,7 @@ class Database extends Migration {
 	 */
 	public function down()
 	{
-    Schema::drop('users');
+		//
 	}
 
 }
