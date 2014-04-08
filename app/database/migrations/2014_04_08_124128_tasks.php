@@ -19,11 +19,11 @@ class Tasks extends Migration {
        $table->timestamps();
      });*/
     
-    Schema::table('tasks', function($table)
+    /*  Schema::table('tasks', function($table)
     {
       $table->string('title');
       $table->boolean('done');
-    });
+    });*/
 	}
 
 	/**
