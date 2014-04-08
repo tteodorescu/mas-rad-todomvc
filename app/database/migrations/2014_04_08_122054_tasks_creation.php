@@ -12,14 +12,14 @@ class TasksCreation extends Migration {
 	 */
 	public function up()
 	{
-    /*   Schema::create('tasks', function($table)
+     Schema::create('tasks', function($table)
      {
        $table->increments('id');
        $table->string('name', 255);
        $table->timestamps();
        $table->string('title');
        $table->boolean('done');     
-     });    */
+     });
 	}
 
 	/**
@@ -29,7 +29,7 @@ class TasksCreation extends Migration {
 	 */
 	public function down()
 	{
-    //Schema::drop('tasks');
+    Schema::drop('tasks');
 	}
 
 }
