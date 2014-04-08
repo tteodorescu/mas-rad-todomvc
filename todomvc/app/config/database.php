@@ -65,15 +65,15 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'todomvc_dev',
-			'username' => 'action',
-			'password' => '',
+			'host'     => 'ec2-54-204-43-139.compute-1.amazonaws.com',
+			'database' => 'd7adn2ggls74tn',
+			'username' => 'vwexrbvnejlrkh',
+			'password' => 'sCODSBxn4DqYsMuz0CZUuRIk81',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
 		),
-
+        
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
 			'host'     => 'localhost',
