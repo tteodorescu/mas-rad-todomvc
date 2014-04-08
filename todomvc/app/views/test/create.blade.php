@@ -1,6 +1,6 @@
 
-@section('title', 'New test')
-@section('content')
+<!--@section('title', 'New test')-->
+<!--@section('content')-->
 
 <!--if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -16,4 +16,4 @@
 
 {{ Form::close() }}
 
-@stop
+<!--@stop-->

@@ -33,6 +33,9 @@ Route::get('/test/{id}', function($id)
 
 Route::get('/controller/index', 'TestController@index');
 
+Route::get('/', array('as'=> 'root', 'uses' => function()
+  { return '<h1>hello from root!<h1>';}));
+           
 /* autres exemples
 Route::get('/controller/index', array(
             'as' => 'index', 
@@ -46,3 +49,7 @@ Route::post('/task/store', array('as' => 'task_store', 'uses' => 'TaskController
 
 /*get du formulaire*/
 Route::get('task/create', array('as'=> 'task_create', 'uses' => 'TaskController@create'));
+
+Route::get('my/index', array('as'=>'my_controller', 'uses' => 'MyController@index'));
+
+Route::get('my/json/{param1}{param2}', array('as'=>'my_json', 'uses' => 'MyController@json'));
