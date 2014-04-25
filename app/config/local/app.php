@@ -2,6 +2,7 @@
 
 return array(
   'providers' => array(
-    'Darsain\Console\ConsoleServiceProvider'
+    'Darsain\Console\ConsoleServiceProvider',
+     'HeigVd\Infos\InfosServiceProvider'
     )
 );
