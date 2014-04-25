@@ -6,6 +6,7 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"fzaninotto/faker": "1.4.*@dev"
+    "heig-vd/infos": "dev-master"
 	},
   "require-dev": {
     "darsain/laravel-console": "dev-master" 
