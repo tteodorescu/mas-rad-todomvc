@@ -10,46 +10,66 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+/*
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
 
 Route::get('/test', function()
 {
   return 'test vide';
 });
 
-/*Route::get('/test/{id}', function($id)
+Route::get('/test/{id}', function($id)
 {
   return 'test '.$id;
-});*/
+});
 
 Route::get('/test/{id}', function($id)
 {
   return View::make('simpleview', array('id'=>$id));
-});
-
-Route::get('/controller/index', 'TestController@index');
+});*/
 
 /*Route::get('/', array('as'=> 'root', 'uses' => function()
   { return '<h1>hello from root!<h1>';}));*/
-           
-/* autres exemples
-Route::get('/controller/index', array(
-            'as' => 'index', 
-            'uses' => 'TestController@index');
+     
+Route::get('/', function()
+{
+	return Redirect::route('tasks_index');
+});
 
-Route:post('tasks/{tasks}/done', array('as' => 'tasks.done', 'uses' => 'TestController@index'));
+
+/*index of tasks*/
+Route::get('task/index', array('as'=> 'tasks_index', 'uses' => 'TaskController@index'));
+
+Route::group(array('before' => 'auth.basic'), function()
+{
+  /*save du formulaire*/
+  Route::post('task/store', 
+              array('as' => 'task_store', 'uses' => 'TaskController@store'));
+
+  /*get du formulaire*/
+  Route::get('task/create{task?}', 
+             array('as'=> 'task_create', 'uses' => 'TaskController@create'));
+
+  /*delete du formulaire*/
+  Route::get('task/{id}/destroy', 
+              array('as' => 'task_destroy', 'uses' => 'TaskController@destroy'));
+
+  /*edit du formulaire*/
+  Route::get('task/{id}/edit', 
+             array('as' => 'task_edit', 'uses' => 'TaskController@edit'));
+});
+
+Route::post('/test', function(){
+  return Response::json(Infos::SchoolInfos());
+});
+
+/*Utilities - RAD model creation
+Route::get('create', function()
+{
+    $user = new User;
+    $user->email = 'traian@test.com';
+    $user->username = 'traian.test';
+    $user->password = Hash::make('password');
+    $user->save();
+});
 */
-
-/*save du formulaire*/
-Route::post('/task/store', array('as' => 'task_store', 'uses' => 'TaskController@store'));
-
-/*get du formulaire*/
-Route::get('task/create', array('as'=> 'task_create', 'uses' => 'TaskController@create'));
-
-Route::get('my/index', array('as'=>'my_controller', 'uses' => 'MyController@index'));
-
-Route::get('my/json/{param1}{param2}', array('as'=>'my_json', 'uses' => 'MyController@json'));

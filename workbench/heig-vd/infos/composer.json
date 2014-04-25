@@ -1,0 +1,20 @@
+{
+    "name": "heig-vd/infos",
+    "description": "",
+    "authors": [
+        {
+            "name": "Traian Teodorescu",
+            "email": "traian.teodorescu@bluewin.ch"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "HeigVd\\Infos": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

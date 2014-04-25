@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TasksCreation extends Migration {
+class MyTasksCreation extends Migration {
 
 	/**
 	 * Run the migrations.
