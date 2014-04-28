@@ -20,7 +20,7 @@
 			"app/tests/TestCase.php"
 		],
     "psr-0": {
-            "HeigVd\\Infos": "vendor/heig-vd/infos/src/"
+            "HeigVd\\Infos": "app/lib/heig-vd/infos/src/"
         }
 	},
 	"scripts": {
