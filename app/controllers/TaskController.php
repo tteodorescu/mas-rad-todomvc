@@ -20,11 +20,12 @@ class TaskController extends BaseController
     
     //detailed saving, to usealso with updates 
     $task = new Task();
-    $task->fill(Input::all());
-    $task->saveTask();
+    $task->fill(Input::get());
+    //    return var_dump($task->tojson());
     
-    return var_dump($task->tojson());
-    //return Redirect::route('tasks_index');
+    $task->savetask();
+    
+    return Redirect::route('tasks_index');
   }
   
   public function edit($id)

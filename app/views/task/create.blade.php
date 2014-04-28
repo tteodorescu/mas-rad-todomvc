@@ -3,7 +3,7 @@
 @section('content')
 
 {{ HTML::style('bootstrap.css') }}
-
+  
 <!--if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
@@ -15,11 +15,16 @@
     {{ Form::text('name', $task ? $task->name : null, array('class' => 'form-control')) }} <br />
     {{ Form::label('title', 'Title', array('class' => 'label-info')) }}
     {{ Form::text('title', $task ? $task->title : null, array('class' => 'form-control')) }}
-    {{ Form::hidden('id', $task ? $task->id : null)}}
+    
+    @if ($task)
+      {{ Form::hidden('id', $task ? $task->id : null)}}
+    @endif
   </fieldset>
 </div>
 
-{{ Form::submit('Create', array('type' => 'submit')) }}
+{{ Form::submit($task ? 'Update' : 'Create', 
+    array('type' => 'submit', 
+          'style' => 'width:100; margin-top:20px ')) }}
 
 {{ Form::close() }}
 

@@ -55,11 +55,12 @@ class Task extends \Eloquent
     
     static::taskevent(function($task)
     {
-       $task->name = $task->name.':taskevent';
+      // $task->name = $task->name.':taskevent';
       
        if ($task->id != 0)
          		$task->exists = true;
       
+       $task->done=false;
        $task->save();
     });
   }  
