@@ -63,13 +63,23 @@ Route::post('/test', function(){
   return Response::json(Infos::SchoolInfos());
 });
 
-/*Utilities - RAD model creation
-Route::get('create', function()
+/*Utilities - RAD model creation*/
+Route::get('create/traian', function()
 {
     $user = new User;
     $user->email = 'traian@test.com';
     $user->username = 'traian.test';
     $user->password = Hash::make('password');
+    
+    $userdb = DB::table('users')->
+      where('username', $user->username)->
+      where('email', $user->email)->get();
+  
+    if (count($userdb) != 0)
+    {
+      return 'user already exists';
+    }
+  
     $user->save();
+    return 'user saved';
 });
-*/
