@@ -12,9 +12,11 @@ class Infos {
   public static function activityToday()
   {
     $dw = date( "w");
+    
     return 
-      $dw == 2 ? 'go to '.self::$infos['towns'][0] : 
-      $dw == 4 ? 'go to '.self::$infos['towns'][1] : 
-        'stay home';
+      $dw == 2 ? 
+        'go to '.self::$infos['towns'][0] : 
+      ($dw == 4 ? 'go to '.self::$infos['towns'][1] : 
+        'stay home');
   }
 }
