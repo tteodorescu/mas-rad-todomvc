@@ -8,13 +8,13 @@
 <!--{{ HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css') }}-->
 {{ HTML::style('bootstrap.css') }}
 
-<?php $now=new DateTime; ?>
+<?php $now=new DateTime('Europe/Zurich'); ?>
 
 <span style='display:inline-block;'>
-<table class='table'>
-<table class='table'>
+
+  <table class='table'>
   <caption style='text-align:left;font-style:italic'>
-    {{ 'printed on:'.$now->format('d-m-Y') }}<br>
+    {{ 'printed on: '.$now->format('d-m-Y H:i') }}<br>
   </caption>
   <thead class='text-primary'>
     <tr>
@@ -38,7 +38,7 @@
   </tbody>
   
 </table>
-</table>
+
 
 {{ $tasks->links() }}
   

@@ -60,7 +60,7 @@ class Task extends \Eloquent
        if ($task->id != 0)
          		$task->exists = true;
       
-       $task->done=false;
+      //       $task->done=false;
        $task->save();
     });
   }  
