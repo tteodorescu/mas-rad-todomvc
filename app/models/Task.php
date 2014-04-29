@@ -14,16 +14,25 @@ class Task extends \Eloquent
   
   protected $attributes = array('done' => false);
   
-  public function isValid()
+  //callable from the constructor when we want to 
+  //return something to the UI
+  public function validator()
   {
-    return Validator::make(
+    return 
+      Validator::make(
         $this->toArray(),
           array(
-            'title'  => 'required|max:100',
-            'name'   => 'required')
-    )->passes();
+            'title' => 'required',
+            'name'  => 'required|min:2')
+    );
   }
+  
+  public function isValid()
+  { return $this->validator()->passes(); }
 
+  public function isInvalid()
+  { return $this->validator()->fails(); }
+    
   public function scopeActive($query)
   {
     return $query->where('done', '=', false);

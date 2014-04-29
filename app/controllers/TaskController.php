@@ -20,7 +20,18 @@ class TaskController extends BaseController
     
     //detailed saving, to usealso with updates 
     $task = new Task();
-    $task->fill(Input::get());
+    $task->fill(Input::all());
+    
+    //    return $task->toJson();
+    
+    if ($task->isInvalid())
+    {
+        Input::flash();
+        
+        return Redirect::route('task_edit', array('id' => $task->id))->
+            withErrors($task->validator()->errors());
+    }
+        
     //    return var_dump($task->tojson());
     
     $task->savetask();
